@@ -94,6 +94,12 @@ void UTP_WeaponComponent::AttachWeapon(AUNREAL_FINALLYCharacter* TargetCharacter
 			// Fire
 			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
 		}
+
+		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+		{
+			// Fire
+			EnhancedInputComponent->BindAction(FireActionDuos, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
+		}
 	}
 }
 
